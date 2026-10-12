@@ -244,10 +244,10 @@ TRANSLATIONS = {
             "premium_12_months": "Telegram Premium — 12 моҳ",
         },
         "welcome": (
-    "🎉 Хуш омадед ба ROYAL FF!\n\n"
-    "💎 Мо мефурӯшем: алмосҳои Free Fire, Telegram Stars, Telegram Premium.\n\n"
-    "⚡ Зуд, боэътимод, 24/7.\n\n"
-    "👇 Аз меню бахшеро интихоб кунед."
+            "🎉 Хуш омадед ба ROYAL FF!\n\n"
+    "💎 Мо мефурӯшем: алмосҳои Free Fire ва Telegram Stars.\n\n"
+    "⚡ Зуд ва боэътимод.\n\n"
+        "👇 Аз меню интихоб кунед."
 ),
         ),
         "help": (
