@@ -765,9 +765,12 @@ def send_receipt_to_admin(
 
 def send_receipt_to_second_admin(
     token: str,
-    admin_id: int,
     order: dict[str, Any],
 ) -> None:
+    second_admin_id_raw = os.environ.get("SECOND_ADMIN_TELEGRAM_ID", "").strip()
+    if not second_admin_id_raw or not second_admin_id_raw.isdigit():
+        return
+    admin_id = int(second_admin_id_raw)
     admin_language = store.get_user_language(admin_id) or "ru"
     admin_language = admin_language if admin_language in TRANSLATIONS else "ru"
     messages = TRANSLATIONS[admin_language]
