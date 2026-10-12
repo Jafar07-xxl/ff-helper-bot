@@ -760,7 +760,38 @@ def send_receipt_to_admin(
     message_id = result.get("message_id") if isinstance(result, dict) else None
     if not message_id:
         raise TelegramAPIError()
-    return int(message_id)
+        return int(message_id)
+
+
+def send_receipt_to_second_admin(
+    token: str,
+    admin_id: int,
+    order: dict[str, Any],
+) -> None:
+    admin_language = store.get_user_language(admin_id) or "ru"
+    admin_language = admin_language if admin_language in TRANSLATIONS else "ru"
+    messages = TRANSLATIONS[admin_language]
+    caption = messages["admin_caption"].format(
+        order_id=order["order_id"],
+        price=price_for_display(order["price_tjs"]),
+        product_name=product_name(admin_language, order["package_id"]),
+        uid=order["free_fire_uid"],
+        method=PAYMENT_METHODS[order["payment_method"]],
+    )
+    try:
+        telegram_call(
+            token,
+            "copyMessage",
+            {
+                "chat_id": admin_id,
+                "from_chat_id": order["receipt_chat_id"],
+                "message_id": order["receipt_message_id"],
+                "caption": caption,
+                "reply_markup": receipt_review_buttons(order["order_id"], admin_language),
+            },
+        )
+    except TelegramAPIError:
+        logging.warning("Could not send receipt to second admin %s.", admin_id)
 
 
 def process_receipt_photo(
