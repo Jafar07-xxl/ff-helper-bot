@@ -12,6 +12,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import store
+import web_server
 from shop_config import PAYMENT_METHODS, PRODUCT_BY_ID, PRODUCTS_BY_CATEGORY
 
 
