@@ -848,6 +848,7 @@ def process_receipt_photo(
 
     try:
         admin_message_id = send_receipt_to_admin(token, admin_id, order_for_admin)
+        send_receipt_to_second_admin(token, order_for_admin)
     except TelegramAPIError:
         store.restore_receipt_waiting(order["order_id"])
         send_message(
