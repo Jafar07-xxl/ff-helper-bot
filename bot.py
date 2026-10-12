@@ -77,8 +77,10 @@ TRANSLATIONS = {
             "premium_12_months": "Telegram Premium — 12 месяцев",
         },
         "welcome": (
-            "Привет! Я FF Helper — помощник по Free Fire.\n\n"
-            "Выберите раздел в меню ниже."
+   "🎉 Добро пожаловать в ROYAL FF!\n\n"
+            "💎 Мы продаём: алмазы Free Fire, Telegram Stars, Telegram Premium.\n\n"
+"⚡ Быстро, надёжно, 24/7.\n\n"
+"👇 Выберите раздел в меню ниже."
         ),
         "help": (
             "Выберите раздел в меню:\n"
