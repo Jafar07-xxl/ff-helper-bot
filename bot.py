@@ -1258,6 +1258,7 @@ def main() -> int:
     if configuration is None:
         return 1
     token, admin_id, payment_details = configuration
+    web_server.start()
 
     try:
         store.initialize_store()
