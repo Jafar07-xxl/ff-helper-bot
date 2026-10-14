@@ -145,7 +145,7 @@ def get_chat_menu_context(chat_id: int) -> str | None:
 
 
 def create_order(
-    user_id: int, 
+    user_id: int,
     chat_id: int,
     language: str,
     package_id: str,
