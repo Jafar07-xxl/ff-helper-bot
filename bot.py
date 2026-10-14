@@ -577,8 +577,7 @@ def uid_prompt_menu(language: str) -> dict[str, Any]:
         "resize_keyboard": True,
         "is_persistent": True,
     }
-
- def username_prompt_menu(language: str) -> dict[str, Any]:
+def username_prompt_menu(language: str) -> dict[str, Any]:
     return {
         "keyboard": [[{"text": TRANSLATIONS[language]["buttons"]["cancel"]}]],
         "resize_keyboard": True,
