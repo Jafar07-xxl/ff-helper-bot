@@ -214,6 +214,8 @@ TRANSLATIONS = {
             "cancel": "Бекор кардан",
             "confirm_uid": "✅ Бале, UID дуруст аст",
             "change_uid": "✏️ UID-ро иваз кардан",
+            "ask_username": "Фармоиш №{order_id}. @username-и худро дар Telegram нависед (мисол: @username):",
+            "invalid_username": "Формати нодуруст. @username-ро бо аломати @ нависед.",
         },
         "package_labels": {
             "100": "💎 100 алмос — 10 TJS",
