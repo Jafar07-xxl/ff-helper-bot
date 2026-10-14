@@ -1067,21 +1067,40 @@ def process_message(
         if order:
             store.cancel_draft_order(order["order_id"], user_id)
         package = PRODUCT_BY_ID[selected_package_id]
-        order = store.create_order(
-            user_id=user_id,
-            chat_id=chat_id,
-            language=language,
-            package_id=package["id"],
-            diamonds=package["diamonds"],
-            price_tjs=package["price_tjs"],
-        )
-        send_message(
-            token,
-            chat_id,
-            messages["ask_uid"].format(order_id=order["order_id"]),
-            uid_prompt_menu(language),
-        )
-        return
+category = package.get("category", "diamonds")
+
+if category == "diamonds":
+    order = store.create_order(
+        user_id=user_id,
+        chat_id=chat_id,
+        language=language,
+        package_id=package["id"],
+        diamonds=package["diamonds"],
+        price_tjs=package["price_tjs"],
+    )
+    send_message(
+        token,
+        chat_id,
+        messages["ask_uid"].format(order_id=order["order_id"]),
+        uid_prompt_menu(language),
+    )
+else:
+    order = store.create_order(
+        user_id=user_id,
+        chat_id=chat_id,
+        language=language,
+        package_id=package["id"],
+        diamonds=package["diamonds"],
+        price_tjs=package["price_tjs"],
+        initial_status="awaiting_receipt",
+    )
+    send_message(
+        token,
+        chat_id,
+        messages["ask_username"].format(order_id=order["order_id"]),
+        username_prompt_menu(language),
+    )
+return
 
     if button in UID_CONFIRM_BUTTONS or button in UID_CHANGE_BUTTONS:
         order = store.get_active_order(user_id)
