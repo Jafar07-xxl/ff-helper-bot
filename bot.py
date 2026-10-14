@@ -1192,11 +1192,11 @@ return
             username_prompt_menu(language),
         )
         return
-    store.save_free_fire_uid(order["order_id"], user_id, text)
-    updated_order = store.get_order(order["order_id"])
-    if updated_order:
-        send_order_summary(token, chat_id, language, updated_order)
-    return
+           store.save_free_fire_uid(order["order_id"], user_id, text)
+           updated_order = store.get_order(order["order_id"])
+       if updated_order:
+           send_order_summary(token, chat_id, language, updated_order)
+       return
 
     if order["status"] == "awaiting_payment_method":
         send_message(
