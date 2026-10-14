@@ -45,6 +45,8 @@ TRANSLATIONS = {
             "cancel": "Отмена",
             "confirm_uid": "✅ Да, UID верный",
             "change_uid": "✏️ Изменить UID",
+            "ask_username": "Заказ №{order_id}. Введите ваш @username в Telegram (например: @username):",
+            "invalid_username": "Неправильный формат. Введите @username, начинающийся с @.",
         },
         "package_labels": {
             "100": "💎 100 алмазов — 10 TJS",
