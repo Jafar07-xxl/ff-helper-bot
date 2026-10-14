@@ -1123,7 +1123,7 @@ else:
     )
 return
 
-    if button in UID_CONFIRM_BUTTONS or button in UID_CHANGE_BUTTONS:
+if button in UID_CONFIRM_BUTTONS or button in UID_CHANGE_BUTTONS:
         order = store.get_active_order(user_id)
         if not order or order["status"] != "awaiting_payment_method":
             send_message(token, chat_id, messages["unknown"], main_menu(language))
