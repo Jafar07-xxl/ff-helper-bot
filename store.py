@@ -151,6 +151,7 @@ def create_order(
     package_id: str,
     diamonds: int,
     price_tjs: str,
+    initial_status: str = "awaiting_uid",
 ) -> dict:
     with _connection() as connection:
         cursor = connection.execute(
@@ -158,9 +159,9 @@ def create_order(
             INSERT INTO orders (
                 user_id, chat_id, language, package_id, diamonds, price_tjs, status
             )
-            VALUES (?, ?, ?, ?, ?, ?, 'awaiting_uid')
+            VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
-            (user_id, chat_id, language, package_id, diamonds, price_tjs),
+            (user_id, chat_id, language, package_id, diamonds, price_tjs, initial_status),
         )
         row = connection.execute(
             "SELECT * FROM orders WHERE order_id = ?",
