@@ -1184,7 +1184,7 @@ return
             )
         return
         if order["status"] == "awaiting_receipt" and order["free_fire_uid"] is None and order["payment_method"] is None:
-    if not re.fullmatch(r"@[A-Za-z0-9_]{4,32}", text):б
+    if not re.fullmatch(r"@[A-Za-z0-9_]{4,32}", text):
         send_message(
             token,
             chat_id,
