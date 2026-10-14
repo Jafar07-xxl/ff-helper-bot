@@ -198,7 +198,7 @@ TRANSLATIONS = {
         ),
         "cancel_label": "Отмена",
     },
-    "tg": {
+"tg": {
         "buttons": {
             "news": "Хабарҳои бозӣ",
             "stats": "Омори бозигар",
